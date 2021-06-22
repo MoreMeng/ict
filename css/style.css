@@ -1,0 +1,97 @@
+.tree ul {
+  margin-left: 20px;
+}
+.tree li {
+  list-style-type: none;
+  margin: 11px;
+  position: relative;
+  white-space: nowrap;
+}
+.tree li::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -20px;
+  border-left: 2px solid silver;
+  border-bottom: 2px solid silver;
+  border-radius: 0 0 0 0px;
+  width: 20px;
+  height: 15px;
+}
+.tree li::after {
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: -20px;
+  border-left: 2px solid silver;
+  border-top: 2px solid silver;
+  border-radius: 0px 0 0 0;
+  width: 20px;
+  height: 100%;
+}
+.tree li:last-child::after {
+  display: none;
+}
+.tree li:last-child::before {
+  border-radius: 0 0 0 5px;
+}
+.tree li a {
+  border: 2px solid silver;
+  border-width: 1px;
+  /*border-radius: 8px;*/
+  padding: 5px;
+  text-decoration: none;
+  text-overflow: yes;
+}
+.tree li a:hover,
+.tree li a:hover + ul li a,
+.tree li a:focus,
+.tree li a:focus + ul li a {
+  background: rgba(204, 204, 204, 0.8);
+  color: #000;
+  border-color: #484848;
+}
+.tree li a:hover + ul li::after,
+.tree li a:focus + ul li::after,
+.tree li a:hover + ul li::before,
+.tree li a:focus + ul li::before,
+.tree li a:hover + ul ul::before,
+.tree li a:focus + ul ul::before,
+.tree li a:hover + ul::before,
+.tree li a:focus + ul::before {
+  border-color: #484848;
+}
+.tree li.fiber::before,
+.tree li.fiber::after {
+  border-color: #cbcb00;
+}
+.tree li.wifi::before,
+.tree li.wifi::after {
+  border-left: dashed;
+  border-bottom: dashed;
+  border-color: #0069cb;
+}
+ul.tree > li:first-child::before {
+  display: none;
+}
+ul.tree > li:first-child::after {
+  border-radius: 5px 0 0 0;
+}
+/* .badge {
+
+} */
+.unit0 {
+  background-color: #c6c6c6;
+}
+.unit6 {
+  background-color: #234890;
+}
+.unit9 {
+  background-color: #90237e;
+}
+.manage {
+  background-color: #00b199;
+}
+.unmanage {
+  background-color: #b10018;
+}

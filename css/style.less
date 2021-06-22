@@ -1,6 +1,7 @@
 @color-sw-manage: #0fc;
-@color-sw-un:pink;
+@color-sw-un: pink;
 @fiber: #cbcb00;
+@wifi: #0069cb;
 @utp: gray;
 @color-rack: #234890;
 @color-switch: #00b199;
@@ -9,104 +10,126 @@
 @border-style: @border-width solid silver;
 
 .border-hover() {
-    border-color: #484848;
+  border-color: #484848;
 }
 
 .tree {
-    ul {
-        margin-left: 20px;
-    }
-    li {
-        list-style-type: none;
-        margin: (@border-width + 9);
-        position: relative;
-        white-space: nowrap;
-        &::before {
-            content: "";
-            position: absolute;
-            top: (@border-width - 7 + @a-border-width);
-            left:-20px;
-            border-left:  @border-style;
-            border-bottom: @border-style;
-            border-radius:0 0 0 0px;
-            width:20px;
-            height:15px;
-        }
-        &::after {
-            position:absolute;
-            content:"";
-            top: (@border-width + 7);
-            left:-20px;
-            border-left:  @border-style;
-            border-top: @border-style;
-            border-radius:0px 0 0 0;
-            width:20px;
-            height:100%;
-        }
-        &:last-child {
-            &::after  {
-                display:none;
-            }
-            &::before{
-                border-radius: 0 0 0 5px;
-            }
-        }
-        a {
-            border: @border-style;
-            border-width: if((@a-border-width > 0), @a-border-width, 1px);
-            /*border-radius: 8px;*/
-            padding:5px;
-            text-decoration: none;
-            text-overflow: yes;
-            &:hover,
-            &:hover+ul li a,
-            &:focus,
-            &:focus+ul li a {
-                background: rgba(204, 204, 204, .8);
-                color: #000;
-                .border-hover;
-            }
+  ul {
+    margin-left: 20px;
+  }
 
-            &:hover+ul ,
-            &:focus+ul {
-                li::after,
-                li::before,
-                ul::before,
-                &::before {
-                    .border-hover;
-                }
-            }
-        }
-        &.fiber::before,
-        &.fiber::after {
-            border-color: @fiber;
-        }
-    }
-}
- ul.tree>li:first-child {
+  li {
+    list-style-type: none;
+    margin: (@border-width + 9);
+    position: relative;
+    white-space: nowrap;
+
     &::before {
-        display:none;
+      content: "";
+      position: absolute;
+      top: (@border-width - 7 + @a-border-width);
+      left: -20px;
+      border-left: @border-style;
+      border-bottom: @border-style;
+      border-radius: 0 0 0 0px;
+      width: 20px;
+      height: 15px;
     }
+
     &::after {
-        border-radius:5px 0 0 0;
+      position: absolute;
+      content: "";
+      top: (@border-width + 7);
+      left: -20px;
+      border-left: @border-style;
+      border-top: @border-style;
+      border-radius: 0px 0 0 0;
+      width: 20px;
+      height: 100%;
     }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+
+      &::before {
+        border-radius: 0 0 0 5px;
+      }
+    }
+
+    a {
+      border: @border-style;
+      border-width: if((@a-border-width > 0), @a-border-width, 1px);
+      /*border-radius: 8px;*/
+      padding: 5px;
+      text-decoration: none;
+      text-overflow: yes;
+
+      &:hover,
+      &:hover+ul li a,
+      &:focus,
+      &:focus+ul li a {
+        background: rgba(204, 204, 204, .8);
+        color: #000;
+        .border-hover;
+      }
+
+      &:hover+ul,
+      &:focus+ul {
+
+        li::after,
+        li::before,
+        ul::before,
+        &::before {
+          .border-hover;
+        }
+      }
+    }
+
+    &.fiber::before,
+    &.fiber::after {
+      border-color: @fiber;
+    }
+
+    &.wifi::before,
+    &.wifi::after {
+      border-left: dashed;
+      border-bottom: dashed;
+      border-color: @wifi;
+    }
+  }
+}
+
+ul.tree>li:first-child {
+  &::before {
+    display: none;
+  }
+
+  &::after {
+    border-radius: 5px 0 0 0;
+  }
 }
 
 /* .badge {
 
 } */
 .unit0 {
-    background-color: #c6c6c6;
+  background-color: #c6c6c6;
 }
+
 .unit6 {
-    background-color: @color-rack;
+  background-color: @color-rack;
 }
+
 .unit9 {
-    background-color: spin(@color-rack,90);
+  background-color: spin(@color-rack, 90);
 }
+
 .manage {
-    background-color: @color-switch;
+  background-color: @color-switch;
 }
+
 .unmanage {
-    background-color: spin(@color-switch,180);
+  background-color: spin(@color-switch, 180);
 }
