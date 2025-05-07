@@ -71,6 +71,9 @@
   border-bottom: dashed;
   border-color: #0069cb;
 }
+.tree .badge {
+  background-color: rgba(0, 0, 0, 0.9);
+}
 ul.tree > li:first-child::before {
   display: none;
 }
@@ -87,19 +90,14 @@ ul.tree > li:first-child::after {
   background-color: #234890;
 }
 .unit9 {
-  background-color: #8f2390;
+  background-color: #90237e;
 }
-.unit27 {
-  background-color: #902348;
+.unit42 {
+  background-color: #489023;
 }
 .manage {
   background-color: #00b199;
 }
 .unmanage {
   background-color: #b10018;
-}
-.serial {
-  background-color: #98ff98;
-  color: #111;
-  font-family: monospace;
 }
